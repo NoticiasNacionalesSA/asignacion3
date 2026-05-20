@@ -35,8 +35,17 @@ jobs:
       - name: Prepare site
         run: |
           mkdir -p _site
-          # Copy all non-hidden files and folders from repository root into _site
-          cp -R ./* _site/
+          # Copy site files from the repository's `asignacion3` folder into _site
+          if [ -d "asignacion3" ]; then
+            cp -R asignacion3/* _site/ || true
+            # Ensure root URL serves home.html as index
+            if [ -f "asignacion3/home.html" ]; then
+              cp asignacion3/home.html _site/index.html
+            fi
+          else
+            echo "Warning: asignacion3 folder not found, copying repo root instead"
+            cp -R ./* _site/ || true
+          fi
           # Ensure Pages doesn't try to build with Jekyll
           touch _site/.nojekyll
 
