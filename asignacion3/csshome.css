@@ -1,0 +1,531 @@
+/* Reset básico */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Scroll suave */
+html{
+    scroll-behavior: smooth;
+}
+
+/* Variables CSS - Paleta LUXOR */
+:root {
+    --red: #d43737;
+    --azul: #021627;
+    --luminosidad: #f5f5f5;
+    --blanco: #ffffff;
+    --accent: #d43737;
+}
+
+/* Body */
+body{
+    font-family: 'Segoe UI', 'Trebuchet MS', sans-serif;
+    background-color: var(--blanco);
+    color: var(--azul);
+    line-height: 1.6;
+}
+
+/* ===================================== */
+/* NAVEGACIÓN */
+/* ===================================== */
+
+.main-nav{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100px;
+    background: rgb(255, 255, 255);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    z-index: 100;
+}
+
+.logo-nav{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+/* Imagen del logo: tamaño apropiado y responsivo */
+.logo-img{
+    max-height:75px; 
+    height:auto;
+    width:auto;
+    display:block;
+}
+
+@media (max-width:480px){
+    .logo-img{
+        max-height:36px;
+    }
+}
+
+.logo-letter{
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--red);
+    border: 2px solid var(--red);
+    padding: 4px 8px;
+    letter-spacing: 2px;
+}
+
+.logo-text{
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.brand{
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--red);
+}
+
+.tagline{
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: var(--accent);
+}
+
+.nav-links{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a{
+    color: var(--blue);
+    text-decoration: none;
+    font-size: 0.99rem;
+    letter-spacing: 1px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover{
+    color: var(--red);
+}
+
+.nav-links a::after{
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--red);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after{
+    width: 100%;
+}
+
+
+/* ===================================== */
+/* SECCIONES PARALLAX */
+/* ===================================== */
+
+.parallax{
+    position: relative;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-top: 70px;
+}
+
+.hero{
+    background-image: linear-gradient(135deg, rgba(15,15,15,0.4) 0%, rgba(212,175,55,0.1) 100%), url('home/noticias4.jpg');
+    background-position: center;
+    background-size: cover;
+    
+}
+
+.second{
+    height: 50vh;
+    background-image: linear-gradient(rgba(15,15,15,0.5), rgba(212,175,55,0.1)), url('home/noticias4.jpg');
+}
+
+.overlay{
+    position: absolute;
+    inset: 0;
+}
+
+/* ===================================== */
+/* CONTENIDO HERO */
+/* ===================================== */
+
+.content{
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 40px;
+}
+
+.content h1{
+    font-size: 4rem;
+    margin-bottom: 20px;
+    letter-spacing: 4px;
+    color: var(--red);
+    font-weight: 700;
+    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.9);
+    line-height: 1.2;
+}
+
+.content p{
+    font-size: 1.1rem;
+    color: var(--luminosidad);
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
+    letter-spacing: 1px;
+}
+
+.btn-hero{
+    display: inline-block;
+    background: var(--red);
+    color: var(--azul);
+    padding: 14px 32px;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 2px;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    border: 2px solid var(--red);
+}
+
+.btn-hero:hover{
+    background: transparent;
+    color: var(--red);
+    transform: scale(1.05);
+}
+
+/* ===================================== */
+/* SECCIONES NORMALES */
+/* ===================================== */
+
+.section{
+    padding: 100px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: auto;
+}
+
+.section h2{
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+    color: var(--red);
+    text-transform: uppercase;
+}
+
+.section h3{
+    font-size: 2rem;
+    color: var(--red);
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.section h4{
+    font-size: 1.5rem;
+    color: var(--red);
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.luminosidad{
+    background-color: var(--luminosidad);
+    color: var(--azul);
+}
+
+.azul{
+    background-color: var(--azul);
+    color: var(--blanco);
+}
+
+.text-container{
+    max-width: 900px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.text-container p{
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* ===================================== */
+/* Noticias de deportes e Internacionales */
+/* ===================================== */
+
+.deportInt-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.deportInt-card{
+    background: var(--azul);
+    color: var(--blanco);
+    padding: 40px 30px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 2px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.deportInt-card:hover{
+    border-color: var(--red);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+.deportInt-icon{
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.deportInt-card h3{
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    color: var(--red);
+}
+
+.deportInt-card p{
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--luminosidad);
+}
+
+/* ===================================== */
+/* Noticias Nacionales */
+/* ===================================== */
+
+.noticias-section{
+    background: var(--blanco);
+}
+
+.noticias-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.car-card{
+    overflow: hidden;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 2px;
+    background: rgba(212, 175, 55, 0.05);
+    transition: all 0.3s ease;
+}
+
+.car-card:hover{
+    transform: translateY(-10px);
+    border-color: var(--red);
+    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
+}
+
+.car-image{
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease;
+}
+
+.car-card:hover .car-image{
+    transform: scale(1.05);
+}
+
+.img-1{
+    background-image: url('home/sanmiguelito.png');
+}
+
+.img-2{
+    background-image: url('home/islaflamenco.png');
+}
+
+.img-3{
+    background-image: url('home/presos.png');
+}
+
+.car-info{
+    padding: 25px;
+}
+
+.car-info h3{
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: var(--red);
+    letter-spacing: 1px;
+}
+
+.car-info p{
+    font-size: 0.9rem;
+    color: var(--luminosidad);
+    line-height: 1.5;
+}
+
+/* ===================================== */
+/* HOVER CARDS */
+/* ===================================== */
+
+.hover-card{
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-card:hover{
+    transform: translateY(-8px);
+}
+
+
+/* ===================================== */
+/* FOOTER */
+/* ===================================== */
+
+.footer{
+    background: #021627;
+    border-top: 2px solid rgba(241, 186, 7, 0.555);
+    padding: 40px;
+    text-align: center;
+}
+
+.footer-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.footer-logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-logo .logo-letter{
+    font-size: 1.5rem;
+}
+
+.footer-links{
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a{
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover{
+    color: var(--red);
+}
+
+.copyright{
+    font-size: 0.85rem;
+    color: var(--accent);
+    letter-spacing: 1px;
+}
+
+/* ===================================== */
+/* RESPONSIVE */
+/* ===================================== */
+
+@media (max-width: 768px){
+    .main-nav{
+        padding: 0 20px;
+    }
+
+    .nav-links{
+        gap: 15px;
+    }
+
+    .nav-links a{
+        font-size: 0.75rem;
+    }
+
+    .content h1{
+        font-size: 2.5rem;
+    }
+
+    .section{
+        padding: 60px 20px;
+    }
+
+    .deportInt-grid,
+    .noticias-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .contact-container{
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer-content{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-links{
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .parallax{
+        background-attachment: scroll;
+    }
+
+    .dropbtn{
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 480px){
+    .logo-letter{
+        font-size: 1.2rem;
+    }
+
+    .brand{
+        font-size: 0.7rem;
+    }
+
+    .tagline{
+        font-size: 0.6rem;
+    }
+
+    .content h1{
+        font-size: 1.8rem;
+        letter-spacing: 2px;
+    }
+
+    .section h2{
+        font-size: 1.8rem;
+    }
+
+    .section{
+        padding: 40px 15px;
+    }
+}
