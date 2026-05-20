@@ -35,14 +35,14 @@ jobs:
       - name: Prepare site
         run: |
           mkdir -p _site
-          cp home.html _site/index.html
-          cp csshome.css _site/
-          cp styles.css _site/
-          cp wireframe.html _site/
-          cp internacionales.html _site/
-          cp internacionales.html _site/Internacionales.html
-          cp -R home _site/
-          cp -R imagenes _site/
+          cp asignacion3/home.html _site/index.html
+          cp asignacion3/csshome.css _site/
+          cp asignacion3/styles.css _site/
+          cp asignacion3/wireframe.html _site/
+          cp asignacion3/internacionales.html _site/
+          cp asignacion3/internacionales.html _site/Internacionales.html
+          cp -R asignacion3/home _site/
+          cp -R asignacion3/imagenes _site/
           touch _site/.nojekyll
 
       - name: Setup Pages
